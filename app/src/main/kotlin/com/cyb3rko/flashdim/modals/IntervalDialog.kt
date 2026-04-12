@@ -105,7 +105,7 @@ internal object IntervalDialog {
         mode = 1
         binding.numberInputLayout.setHint(R.string.dialog_interval_input_hint2)
         binding.numberInputLayout.suffixText = null
-        binding.numberInputLayout.counterMaxLength = 3
+        binding.numberInputLayout.counterMaxLength = 5
         binding.numberInputText.setText(bpm)
     }
 
@@ -117,7 +117,7 @@ internal object IntervalDialog {
         validateBpm(input)
     }
 
-    private fun validateTime(time: String) = time.toInt() in 10..10000
+    private fun validateTime(time: String) = time.toInt() in 1..100000
 
-    private fun validateBpm(bpm: String) = bpm.toInt() in 10..4000
+    private fun validateBpm(bpm: String) = bpm.toInt() in 1..100000
 }
